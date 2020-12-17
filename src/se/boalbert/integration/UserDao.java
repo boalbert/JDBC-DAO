@@ -13,7 +13,7 @@ public interface UserDao {
 
     List<User> getUserByName(String firstName);
 
-    boolean updateUserById(String id, String email);
+    boolean updateUserEmailById(String id, String email);
 
     boolean deleteUserById(String id);
 

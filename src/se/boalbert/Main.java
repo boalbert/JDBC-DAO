@@ -12,22 +12,33 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//  Create User
+
+		/**
+		 * Create a user and insert it to the database
+		 */
 		userDao.createUser("880515-6634", "Albert", "Andersson", "bo.andersson@iths.se");
 
-		//  List all users
+		/**
+		 * Populates a list of all users in the database, prints it to the console
+		 */
 		List<User> listAll = userDao.getAllUsers();
 		System.out.println(listAll);
 
-		//  Get users by name
+		/**
+		 * Return a list of users matching the search String
+		 */
 		List<User> listName = userDao.getUserByName("An");
 		System.out.println(listName);
 
-		//  Update user
-		userDao.updateUserById("880515-6634", "bo.andersson@iths.se");
+		/**
+		 * Updates email of a user in the database via ID/Personnummer
+		 */
+		userDao.updateUserEmailById("880515-6634", "bo.andersson@iths.se");
 		System.out.println(userDao.getUserByName("Bo"));
 
-		//  Delete user
+		/**
+		 * Deletes a user from the database via personnummer
+		 */
 		userDao.deleteUserById("571110-3843");
 
 	}

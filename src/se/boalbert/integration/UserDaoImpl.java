@@ -6,18 +6,32 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implements methods for useage in main-class
+ */
 public class UserDaoImpl implements UserDao {
 
+    /**
+     * Connection url to the database, used in the constructor for connecting
+     */
     private static final String CONNECTION_STRING = "jdbc:sqlserver://localhost:1433;databaseName=everyloop;user=boalbert;password=XXXXXX!";
 
     private Connection conn;
 
+    /**
+     * Statements used in the constructor
+     */
     private PreparedStatement createStmt;
     private PreparedStatement getAllStmt;
     private PreparedStatement getByNameStmt;
     private PreparedStatement updateStmt;
     private PreparedStatement deleteStmt;
 
+    /**
+     * Constructor for interface.
+     * Creates a connection and holds all prepared statements.
+     * Throws RunTimeException with specifier which method threw exception.
+     */
     public UserDaoImpl() {
         try {
             conn = DriverManager.getConnection(CONNECTION_STRING);
@@ -33,6 +47,13 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * Adds a user to the database.
+     * @param id in the database
+     * @param firstname of user
+     * @param lastname of user
+     * @param email for user
+     */
     @Override
     public void createUser(String id, String firstname, String lastname, String email) {
         try {
@@ -50,6 +71,10 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     *
+     * @return a list of all registred users in the database
+     */
     @Override
     public List<User> getAllUsers() {
         ArrayList<User> result = new ArrayList<>();
@@ -74,6 +99,11 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * Search for user by name, searching for "A" will return all user starting with "A".
+     * @param firstName of user you want to find, dont have to specify whole firstname
+     * @return an User object
+     */
     @Override
     public List<User> getUserByName(String firstName) {
 
@@ -103,8 +133,14 @@ public class UserDaoImpl implements UserDao {
 
     }
 
+    /**
+     * This method lets you update the mail of a user in the database
+     * @param id personnummer of the user you want to update
+     * @param email to update, overwrites the old email
+     * @return boolean true if success, else false
+     */
     @Override
-    public boolean updateUserById(String id, String email) {
+    public boolean updateUserEmailById(String id, String email) {
 
         try {
             updateStmt.setString(1, email);
@@ -119,6 +155,11 @@ public class UserDaoImpl implements UserDao {
 
     }
 
+    /**
+     * Permanently deletes a user from the database
+     * @param id personnummer of the user you want to delete
+     * @return boolean, true if it was a success
+     */
     @Override
     public boolean deleteUserById(String id) {
 
