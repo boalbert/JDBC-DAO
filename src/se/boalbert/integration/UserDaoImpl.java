@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao {
 
-    private static final String CONNECTION_STRING = "jdbc:sqlserver://localhost:1433;databaseName=everyloop;user=boalbert;password=login123!";
+    private static final String CONNECTION_STRING = "jdbc:sqlserver://localhost:1433;databaseName=everyloop;user=boalbert;password=XXXXXX!";
 
     private Connection conn;
 
@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void create(String id, String firstname, String lastname, String email) {
+    public void createUser(String id, String firstname, String lastname, String email) {
         try {
             createStmt.setString(1, id);
             createStmt.setString(2, firstname);
@@ -46,7 +46,7 @@ public class UserDaoImpl implements UserDao {
             System.out.println(id + " - " + firstname + " has been added to database.");
 
         } catch (SQLException e) {
-            throw new RuntimeException("Problem in DAO create: " + e);
+            throw new RuntimeException("Problem in DAO createUser(): " + e);
         }
     }
 
@@ -70,7 +70,7 @@ public class UserDaoImpl implements UserDao {
             }
             return result;
         } catch (SQLException e) {
-            throw new RuntimeException("Problem in DAO getAll(): " + e);
+            throw new RuntimeException("Problem in DAO getAllUsers(): " + e);
         }
     }
 
@@ -97,7 +97,7 @@ public class UserDaoImpl implements UserDao {
             }
             return result;
         } catch (SQLException e) {
-            throw new RuntimeException("Problem in DAO getAll(): " + e);
+            throw new RuntimeException("Problem in DAO getUserByName(): " + e);
         }
 
 
@@ -114,7 +114,7 @@ public class UserDaoImpl implements UserDao {
             return true;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Problem in DAO update: " + e);
+            throw new RuntimeException("Problem in DAO updateUserById(): " + e);
         }
 
     }
@@ -129,7 +129,7 @@ public class UserDaoImpl implements UserDao {
             return true;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Problem in DAO delete: " + e);
+            throw new RuntimeException("Problem in DAO deleteUserById(): " + e);
         }
 
     }

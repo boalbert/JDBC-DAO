@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		//  Create User
-		userDao.create("880515-6634", "Albert", "Andersson", "bo.andersson@iths.se");
+		userDao.createUser("880515-6634", "Albert", "Andersson", "bo.andersson@iths.se");
 
 		//  List all users
 		List<User> listAll = userDao.getAllUsers();
