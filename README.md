@@ -9,6 +9,6 @@ Formatera connection-string enligt:
 
 
 ```
-   jdbc:sqlserver://localhost:1433;databaseName=DATEBASENAME;user=USERNAME;password=PASSWORD!
+   jdbc:sqlserver://localhost:1433;databaseName=DATEBASENAME;user=USERNAME;password=PASSWORD
 ``` 
    
