@@ -1,5 +1,5 @@
 .idea
 JDBC-Lektion.iml
-!/src/resources/login.txt
+/src/resources/login.txt
 out/production/JDBC-Lektion/resources/
 out/production/JDBC-Lektion/se/boalbert/config/
