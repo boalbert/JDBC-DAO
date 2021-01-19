@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class UserDaoImpl implements UserDao {
 
+
     /**
      * Connection url to the database, used in the constructor for connecting
      */
-    private static final String CONNECTION_STRING = "jdbc:sqlserver://localhost:1433;databaseName=everyloop;user=boalbert;password=XXXXXX!";
-
+    private static final String CONNECTION_STRING2 = se.boalbert.config.Connection.connectionString();
     private Connection conn;
 
     /**
@@ -34,7 +34,8 @@ public class UserDaoImpl implements UserDao {
      */
     public UserDaoImpl() {
         try {
-            conn = DriverManager.getConnection(CONNECTION_STRING);
+
+            conn = DriverManager.getConnection(CONNECTION_STRING2);
 
             createStmt = conn.prepareStatement("INSERT INTO Users (ID, FirstName, LastName, Email) VALUES (?, ?, ?, ?)");
             getAllStmt = conn.prepareStatement("SELECT * FROM Users");
