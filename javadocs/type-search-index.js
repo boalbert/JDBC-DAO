@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"se.boalbert","l":"Main"},{"p":"se.boalbert.model","l":"User"},{"p":"se.boalbert.integration","l":"UserDao"},{"p":"se.boalbert.integration","l":"UserDaoImpl"}]
