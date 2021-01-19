@@ -16,7 +16,7 @@ public class Main {
 		/**
 		 * Create a user and insert it to the database
 		 */
-		userDao.createUser("880515-6634", "Albert", "Andersson", "bo.andersson@iths.se");
+//		userDao.createUser("880515-6634", "Albert", "Andersson", "bo.andersson@iths.se");
 
 		/**
 		 * Populates a list of all users in the database, prints it to the console

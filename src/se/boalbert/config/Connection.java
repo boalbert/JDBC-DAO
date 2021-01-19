@@ -27,7 +27,9 @@ public class Connection {
 			}
 		} catch (IOException e) {
 			System.out.println("Error fetching connection-string.");
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+			throw new RuntimeException();
+
 		}
 		return null;
 	}
